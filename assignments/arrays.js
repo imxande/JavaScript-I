@@ -96,12 +96,11 @@ console.log("**********Car Model Sorted**********");
 let carModels = [];
 let carModelsSorted = [];
 for (i = 0; i < inventory.length; i++){
-  let models = inventory[i].car_model;
+   models = inventory[i].car_model;
   carModels.push(models);
-  let carModelsSorted = carModels.sort();
-  console.log(carModelsSorted);
+  carModelsSorted = carModels.sort();
 }
-
+console.log(carModelsSorted);
 
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
@@ -111,9 +110,8 @@ let carYears = [];
 for (i = 0; i < inventory.length; i++){
   const year = inventory[i].car_year;
   carYears.push(year);
-  console.log(carYears);
 }
-
+console.log(carYears);
 
 
 // // ==== Challenge 5 ====
@@ -125,8 +123,8 @@ for (i = 0; i < inventory.length; i++){
   if (inventory[i].car_year < 2000){
     oldCars.push(inventory[i].car_year);
   }
-  console.log(oldCars);
 }
+console.log(oldCars);
 
 
 
@@ -138,6 +136,7 @@ let BMWAndAudi = [];
 for (let i = 0; i < inventory.length; i++){
   if (inventory[i].car_make === 'BMW' || inventory[i].car_make === 'Audi'){
     BMWAndAudi.push(inventory[i]);
-    console.log(BMWAndAudi);
+    
   }
 }
+console.log(BMWAndAudi);
