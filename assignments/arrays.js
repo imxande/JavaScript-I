@@ -73,70 +73,66 @@ let inventory = [
 // console.log(evens);
 // [12, 14]
 
+console.log("********Challenge:1*********")
 // ==== Challenge 1 ====
 // The dealer can't recall the information for a car with an id of 33 on his lot. Help the dealer find out which car has an id of 33 by logging the car's year, make, and model in the console log provided to you below:
-console.log("Car 33 is a " + inventory[32].car_year + " "+ inventory[32].car_make + " " + inventory[32].car_model);
+console.log("Car 33 is a " + inventory[32].car_year + " " + inventory[32].car_make + " " + inventory[32].car_model );
+console.log();
 
+console.log("********Challenge:2*********")
 // ==== Challenge 2 ====
 // The dealer needs the information on the last car in their inventory.  What is the make and model of the last car in the inventory?  Log the make and model into the console.
-
-console.log("**********Last Car**********");
-
 let lastCar = 0;
 for (let i = 0; i < inventory.length; i++){
-  if (inventory[i] === inventory[inventory.length - 1]){
-    console.log(inventory[i]);
-  }
+  lastCar = inventory[49];
 }
+console.log(lastCar.car_make + " " + lastCar.car_model);
+console.log();
 
+console.log("********Challenge:3*********")
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
-console.log("**********Car Model Sorted**********");
-
 let carModels = [];
 let carModelsSorted = [];
-for (i = 0; i < inventory.length; i++){
-   models = inventory[i].car_model;
-  carModels.push(models);
+for (let i = 0; i < inventory.length; i++){
+  carModels.push(inventory[i].car_model);
   carModelsSorted = carModels.sort();
 }
-console.log(carModelsSorted);
+console.log( carModelsSorted.join(", "));
+console.log();
 
+console.log("********Challenge:4*********")
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
-console.log("**********Car Year**********");
-
 let carYears = [];
-for (i = 0; i < inventory.length; i++){
-  const year = inventory[i].car_year;
-  carYears.push(year);
+for(let i = 0; i < inventory.length; i++){
+  carYears.push(inventory[i].car_year);
+  
 }
-console.log(carYears);
+console.log(carYears.join(", "));
+console.log();
 
-
-// // ==== Challenge 5 ====
-// // The car lot manager needs to find out how many cars are older than the year 2000. Using the carYears array you just created, find out how many cars were made before the year 2000 by populating the array oldCars and logging it's length.
-console.log("**********Older Car************");
-
+console.log("********Challenge:5*********")
+// ==== Challenge 5 ====
+// The car lot manager needs to find out how many cars are older than the year 2000. Using the carYears array you just created, find out how many cars were made before the year 2000 by populating the array oldCars and logging it's length.
 let oldCars = [];
-for (i = 0; i < inventory.length; i++){
-  if (inventory[i].car_year < 2000){
-    oldCars.push(inventory[i].car_year);
+for (let i = 0; i < carYears.length; i++){
+  if (carYears[i] < 2000){
+    oldCars.push(carYears[i])
   }
 }
-console.log(oldCars);
+console.log(oldCars.length);
+console.log();
 
-
-
+console.log("********Challenge:6*********")
 // // ==== Challenge 6 ====
 // // A buyer is interested in seeing only BMW and Audi cars within the inventory. Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
-console.log("**********BMW & Audi**********");
-
 let BMWAndAudi = [];
 for (let i = 0; i < inventory.length; i++){
-  if (inventory[i].car_make === 'BMW' || inventory[i].car_make === 'Audi'){
+  if (inventory[i].car_make === "BMW" || inventory[i].car_make === "Audi"){
     BMWAndAudi.push(inventory[i]);
-    
+    JSON.stringify(BMWAndAudi);
   }
 }
 console.log(BMWAndAudi);
+console.log();
